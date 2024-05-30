@@ -7,7 +7,7 @@
 body {
   display: grid;
   min-height: 100%;
-  grid-template-columns: 350px auto;
+  grid-template-columns: 280px auto;
   grid-template-rows: 2fr 15fr 1fr;
 }
 body header {
@@ -54,6 +54,28 @@ footer {
 
 #sidebar {
   background-color: #d8d8d2;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 50px;
+  gap: 50px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.review .sidebar-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-project {
+  display: flex;
+  align-items: center;
 }
 
 /*# sourceMappingURL=output.css.map */
