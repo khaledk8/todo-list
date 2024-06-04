@@ -91,3 +91,22 @@ footer {
     align-items: center;
 }
 
+.button-div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &:hover {
+        background-color: $side-color;
+        cursor: pointer;
+    }
+
+}
+
+
+#content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 5rem;
+}
+

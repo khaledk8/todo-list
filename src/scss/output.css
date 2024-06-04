@@ -78,4 +78,21 @@ footer {
   align-items: center;
 }
 
+.button-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.button-div:hover {
+  background-color: #d8d8d2;
+  cursor: pointer;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 5rem;
+}
+
 /*# sourceMappingURL=output.css.map */
