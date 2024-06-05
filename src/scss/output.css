@@ -72,10 +72,16 @@ footer {
   align-items: center;
   gap: 10px;
 }
+.review .sidebar-div:hover {
+  cursor: pointer;
+}
 
 .add-project {
   display: flex;
   align-items: center;
+}
+.add-project:hover {
+  cursor: pointer;
 }
 
 .button-div {

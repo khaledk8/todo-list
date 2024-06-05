@@ -82,6 +82,9 @@ footer {
         display: flex;
         align-items: center;
         gap: 10px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
 }
@@ -89,6 +92,9 @@ footer {
 .add-project {
     display: flex;
     align-items: center;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .button-div {
