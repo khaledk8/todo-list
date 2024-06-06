@@ -120,6 +120,12 @@ footer {
     display: none;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .add-form {
     display: flex;
     justify-content: space-around;
@@ -134,12 +140,20 @@ footer {
     background-color: $side-color;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
 %form-button {
     color: white;
     border: none;
     padding: 10px;
     border-radius: 7.5px;
     font-size: 1.5rem;
+    width: 40%;
 }
 
 .accept-button {

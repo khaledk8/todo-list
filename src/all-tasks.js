@@ -14,6 +14,7 @@ export function printTitle () {
 
 export function createForm () {
     const formContainer = document.createElement('div')
+    formContainer.classList.add('form-container')
     const form = document.createElement('form')
     form.classList.add('add-form')
     const textInput = document.createElement('input')
@@ -30,13 +31,16 @@ export function createForm () {
     cancelButton.setAttribute('onclick', 'ignoreFormData()')
     cancelButton.classList.add('cancel-button')
     cancelButton.textContent = 'Cancel'
+    const buttonContainer = document.createElement('div')
+    buttonContainer.classList.add('button-container')
 
 
     formContainer.appendChild(form)
     form.appendChild(textInput)
     form.appendChild(dateInput)
-    form.appendChild(acceptButton)
-    form.appendChild(cancelButton)
+    formContainer.appendChild(buttonContainer)
+    buttonContainer.appendChild(acceptButton)
+    buttonContainer.appendChild(cancelButton)
 
     return formContainer
 
