@@ -116,3 +116,38 @@ footer {
     padding: 5rem;
 }
 
+.hidden {
+    display: none;
+}
+
+.add-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-input  {
+    width: 50%;
+    padding: 7.5px;
+    border: none;
+    border-radius: 7.5px;
+    background-color: $side-color;
+}
+
+%form-button {
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 7.5px;
+    font-size: 1.5rem;
+}
+
+.accept-button {
+    @extend %form-button;
+    background-color: #5cdb5c;
+}
+
+.cancel-button {
+    @extend %form-button;
+    background-color: #ff0021;
+}
