@@ -1,10 +1,10 @@
 import './scss/output.css'
-import { printTitle, addTaskButton } from './all-tasks'
+import { printTitle, addTaskButton} from './all-tasks'
 
+const tasksArray = []
 
 const allTasksButton = document.getElementById('all')
 const contentDiv = document.getElementById('content')
-
 
 
 allTasksButton.addEventListener('click', () => {
@@ -16,3 +16,5 @@ allTasksButton.addEventListener('click', () => {
     addTaskButton()
 })
 
+
+export {tasksArray}

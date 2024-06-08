@@ -1,4 +1,4 @@
-
+import { tasksArray } from "./index.js"
 
 export function printTitle () {
 
@@ -12,7 +12,7 @@ export function printTitle () {
 }
 
 
-export function createForm () {
+function createForm () {
     const formContainer = document.createElement('div')
     formContainer.classList.add('form-container')
     const form = document.createElement('form')
@@ -24,11 +24,11 @@ export function createForm () {
     dateInput.setAttribute('type', 'date')
     dateInput.classList.add('date-input')
     const acceptButton = document.createElement('button')
-    acceptButton.setAttribute('onclick', 'getFormData()')
+    /* acceptButton.setAttribute('onclick', 'getFormData()') */
     acceptButton.classList.add('accept-button')
     acceptButton.textContent = 'Accept'
     const cancelButton = document.createElement('button')
-    cancelButton.setAttribute('onclick', 'ignoreFormData()')
+    /* cancelButton.setAttribute('onclick', 'ignoreFormData()') */
     cancelButton.classList.add('cancel-button')
     cancelButton.textContent = 'Cancel'
     const buttonContainer = document.createElement('div')
@@ -42,8 +42,39 @@ export function createForm () {
     buttonContainer.appendChild(acceptButton)
     buttonContainer.appendChild(cancelButton)
 
+    acceptButton.addEventListener('click', () => {
+        getFormData()
+        removeForm()
+    })
+
+    cancelButton.addEventListener('click', () => {
+        removeForm()
+    })
+
     return formContainer
 
+}
+
+
+export function getFormData () {
+    const textField = document.querySelector('.text-input').value
+    const dateField = document.querySelector('.date-input').value
+    tasksArray.push(createTask(textField, dateField))
+    console.log(tasksArray)
+}
+
+function createTask (task, dateField) {
+    return {
+        task: task,
+        date: new Date(Date.parse(dateField))
+    }
+}
+
+function removeForm () {
+    const formContainer = document.querySelector('.form-container')
+    formContainer.remove()
+    const buttonDiv = document.querySelector('.button-div')
+    buttonDiv.classList.remove('hidden')
 }
 
 export function addTaskButton () {
