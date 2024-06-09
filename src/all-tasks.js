@@ -1,10 +1,9 @@
-import { tasksArray } from "./index.js"
+import { tasksArray } from "./array-modified.js"
 
 export function printTitle () {
 
     const titleH = document.createElement('h1')
     const contentDiv = document.getElementById('content')
-
 
     titleH.textContent = 'All Tasks'
     contentDiv.appendChild(titleH)

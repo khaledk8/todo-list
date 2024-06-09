@@ -1,7 +1,6 @@
 import './scss/output.css'
 import { printTitle, addTaskButton} from './all-tasks'
-
-const tasksArray = []
+import { tasksArray } from "./array-modified.js"
 
 const allTasksButton = document.getElementById('all')
 const contentDiv = document.getElementById('content')
