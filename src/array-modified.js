@@ -33,4 +33,4 @@ export function createObservableArray(array, spliceCallback, pushCallback) {
     return array;
 }
 
-export const tasksArray = createObservableArray([], spliceHandler, pushHandler);
+export const tasksArray = createObservableArray(JSON.parse(localStorage.getItem('myArray')), spliceHandler, pushHandler);

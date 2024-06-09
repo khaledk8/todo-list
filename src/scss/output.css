@@ -149,4 +149,15 @@ footer {
   background-color: #ff0021;
 }
 
+.task-div {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.para-task {
+  width: 75%;
+  margin-right: auto;
+}
+
 /*# sourceMappingURL=output.css.map */

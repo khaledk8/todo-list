@@ -63,9 +63,11 @@ export function getFormData () {
 }
 
 function createTask (task, dateField) {
+    if (!localStorage.getItem('myId')) localStorage.setItem('myId', 0)
     return {
         task: task,
-        date: new Date(Date.parse(dateField))
+        date: new Date(Date.parse(dateField)),
+        id: localStorage.getItem('myId') + 1
     }
 }
 
@@ -80,6 +82,7 @@ export function addTaskButton () {
     const addSvg = `<svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 12.75V18H12.75V12.75H18V11.25H12.75V6H11.25V11.25H6V12.75H11.25Z" fill="#080341"></path> </g></svg>`
     const contentDiv = document.getElementById('content')
     const container = document.createElement('div')
+    container.classList.add('tasks-container')
     const buttonDiv = document.createElement('div')
     const buttonDivText = document.createElement('p')
     buttonDivText.textContent = "Add Task"
