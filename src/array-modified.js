@@ -1,3 +1,4 @@
+import { populateDom } from "./append-all-tasks";
 
 export function spliceHandler(array, method, args) {
     console.log(`Array modified using ${method}. Arguments: ${args}`);
@@ -33,4 +34,17 @@ export function createObservableArray(array, spliceCallback, pushCallback) {
     return array;
 }
 
-export const tasksArray = createObservableArray(JSON.parse(localStorage.getItem('myArray')), spliceHandler, pushHandler);
+export let tasksArray 
+
+export function arrayChecker () {
+    if (localStorage.getItem('myArray')) {
+        const tasks = localStorage.getItem('myArray')
+        tasksArray = createObservableArray(JSON.parse(tasks), spliceHandler, pushHandler);
+        console.log(tasks)
+    /*     populateDom(JSON.parse(tasks)) */
+    } else {
+        localStorage.setItem('myArray', JSON.stringify([]))
+        arrayChecker()
+    }
+    
+}

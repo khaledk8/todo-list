@@ -1,8 +1,7 @@
 
-
-export function populateDom () {
-    const allTasks = localStorage.getItem('myArray')
-    const allTasksArray = JSON.parse(allTasks)
+export function populateDom (array) {
+    /* const allTasks = localStorage.getItem('myArray') */
+    const allTasksArray = array
     console.log(allTasksArray)
 
     const tasksContainer = document.querySelector('.tasks-container')
