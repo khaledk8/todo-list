@@ -160,4 +160,8 @@ footer {
   margin-right: auto;
 }
 
+.red-border {
+  border: 1px solid red;
+}
+
 /*# sourceMappingURL=output.css.map */

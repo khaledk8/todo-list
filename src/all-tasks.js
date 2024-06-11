@@ -18,16 +18,15 @@ function createForm () {
     form.classList.add('add-form')
     const textInput = document.createElement('input')
     textInput.setAttribute('type', 'text')
+    textInput.required = true
     textInput.classList.add('text-input')
     const dateInput = document.createElement('input')
     dateInput.setAttribute('type', 'date')
     dateInput.classList.add('date-input')
     const acceptButton = document.createElement('button')
-    /* acceptButton.setAttribute('onclick', 'getFormData()') */
     acceptButton.classList.add('accept-button')
     acceptButton.textContent = 'Accept'
     const cancelButton = document.createElement('button')
-    /* cancelButton.setAttribute('onclick', 'ignoreFormData()') */
     cancelButton.classList.add('cancel-button')
     cancelButton.textContent = 'Cancel'
     const buttonContainer = document.createElement('div')
@@ -42,8 +41,13 @@ function createForm () {
     buttonContainer.appendChild(cancelButton)
 
     acceptButton.addEventListener('click', () => {
-        getFormData()
-        removeForm()
+        if (textInput.value != '' && dateInput != null) {
+            getFormData()
+            removeForm()
+        } else {
+            textInput.classList.add('red-border')
+            dateInput.classList.add('red-border')
+        }
     })
 
     cancelButton.addEventListener('click', () => {
